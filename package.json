@@ -20,5 +20,9 @@
   "homepage": "https://github.com/Roshu-git/Restfull-API#readme",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "nstall": "^0.2.0"
   }
 }
