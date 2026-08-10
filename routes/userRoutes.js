@@ -1,15 +1,15 @@
 const express = require('express');
 const users = require('../data/users');
-const validateUser = require('../middleware/validateuser');
+const validateUser = require('../middleware/validateUser');
 
 const router = express.Router();
 
-// GET /users
+// GET /users - fetch all users
 router.get('/users', (req, res) => {
   res.status(200).json(users);
 });
 
-// GET /users/:id
+// GET /users/:id - fetch single user
 router.get('/users/:id', (req, res) => {
   const user = users.find(u => u.id === req.params.id);
 
@@ -20,8 +20,8 @@ router.get('/users/:id', (req, res) => {
   res.status(200).json(user);
 });
 
-// POST /user
-router.post('/user', validateUser, (req, res) => {
+// POST /users - add new user
+router.post('/users', validateUser, (req, res) => {
   const newUser = {
     id: String(users.length + 1),
     ...req.body
@@ -35,8 +35,8 @@ router.post('/user', validateUser, (req, res) => {
   });
 });
 
-// PUT /user/:id
-router.put('/user/:id', validateUser, (req, res) => {
+// PUT /users/:id update existing user
+router.put('/users/:id', validateUser, (req, res) => {
   const user = users.find(u => u.id === req.params.id);
 
   if (!user) {
@@ -53,8 +53,8 @@ router.put('/user/:id', validateUser, (req, res) => {
   });
 });
 
-// DELETE /user/:id
-router.delete('/user/:id', (req, res) => {
+// DELETE /users:id - delete user
+router.delete('/users/:id', (req, res) => {
   const index = users.findIndex(u => u.id === req.params.id);
 
   if (index === -1) {

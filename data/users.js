@@ -1,37 +1,39 @@
-const user=[
+// In-memory user data
+const users = [
     {
         id :'1',
-        name:'atasha',
-        lastname:'Kushwah',
+        firstName:'atasha',
+        lastName:'Kushwah',
         hobby: 'Teaching'
 
     },
     {
         id :'2',
-        name:'Ruhi',
-        lastname:'Sharma',
+        firstName:'Ruhi',
+        lastName:'Sharma',
         hobby: 'Drawing'
 
     },
     {
         id :'3',
-        name:'Mayank',
-        lastname:'Verma',
+        firstName:'Mayank',
+        lastName:'Verma',
         hobby: 'Drawing'
 
     },
     {
         id :'4',
-        name:':axmi',
-        lastname:'kushwah',
+        firstName:'Laxmi',
+        lastName:'kushwah',
         hobby: 'Dancing'
 
     },
     {
         id :'5',
-        name:'Rahul',
-        lastname:'Sharma',
+        firstName:'Rahul',
+        lastName:'Sharma',
         hobby: 'Playing Badminton'
 
     }
-]
+];
+module.exports = users;
